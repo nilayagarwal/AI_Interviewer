@@ -1,19 +1,16 @@
-import "../styles/globals.css"
+import "../styles/globals.css";
+import { BrowserRouter, Routes, Route } from "react-router";
 import { Form } from "@/components/form";
-import { useState } from "react";
 import { Interview } from "@/components/interview";
 import { Results } from "@/components/result";
-import {  BrowserRouter, Routes ,Route} from "react-router";
 
 export function App() {
-  const [page, setPage] = useState<"form" | "interview" | "results">("form");
   return (
-    
     <BrowserRouter>
       <Routes>
-        <Route path= "/" element={<Form/>}/>
-        <Route path= "/interview/:interviewId" element={<Interview/>}/>
-        <Route path= "/result/:interviewId" element={<Results/>}/>
+        <Route path="/" element={<Form />} />
+        <Route path="/interview/:interviewId" element={<Interview />} />
+        <Route path="/result/:interviewId" element={<Results />} />
       </Routes>
     </BrowserRouter>
   );
